@@ -4,6 +4,7 @@ import axios from 'axios';
 import { signIn } from 'next-auth/react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import Head from 'next/head';
 
 const Auth = () => {
 	const [email, setEmail] = useState('');
@@ -44,6 +45,10 @@ const Auth = () => {
 
 	return (
 		<div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+			<Head>
+				<title>Nietflix</title>
+				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+			</Head>
 			<div className='bg-black w-full h-full lg:bg-opacity-50'>
 				<nav className='px-12 py-5'>
 					<img src='/images/logo.png' alt='Logo' className='h-12' />
