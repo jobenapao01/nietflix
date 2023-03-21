@@ -8,6 +8,7 @@ import useInfoModal from '@/hooks/useInfoModal';
 import useMovieList from '@/hooks/useMovieList';
 import { NextPageContext } from 'next';
 import { signOut, getSession } from 'next-auth/react';
+import Head from 'next/head';
 
 //Protect client route to prevent the client to visit private routes without logging in
 export async function getServerSideProps(context: NextPageContext) {
@@ -35,6 +36,10 @@ export default function Home() {
 
 	return (
 		<>
+			<Head>
+				<title>Nietflix</title>
+				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+			</Head>
 			<InfoModal visible={isOpen} onClose={closeModal} />
 			<Navbar />
 			<Billboard />
